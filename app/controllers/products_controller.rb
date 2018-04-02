@@ -5,6 +5,11 @@ class ProductsController < ApplicationController
     render json: @product
   end
 
+  def show
+    @product = Product.find(params[:id])
+    render json: @product
+  end
+
   def create
     @product = Product.create(product: params[:product])
     render json: @product
